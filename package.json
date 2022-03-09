@@ -1,0 +1,76 @@
+{
+	"name": "vscode-ros-azure",
+	"displayName": "Azure for ROS Visual Studio Code extension",
+	"description": "VSCode Extension for working with ROS and Azure",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.65.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:vscode-ros-azure.editAzureMap"
+	],
+	"main": "./dist/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "vscode-ros-azure.editAzureMap",
+				"title": "Create Gazebo World from Azure Map",
+				"category": "ROS for Azure"
+			}
+		],
+		"configuration": {
+			"type": "object",
+			"title": "vscode-ros-azure",
+			"properties": {
+				"vscode-ros-azure.mapskey": {
+					"type": "string",
+					"description": "Azure Maps Primary Key."
+				},
+				"vscode-ros-azure.mapsclientid": {
+					"type": "string",
+					"description": "Azure Maps Client ID."
+				}
+			}
+		}
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run package",
+		"compile": "webpack",
+		"watch": "webpack --watch",
+		"package": "webpack --mode production --devtool hidden-source-map",
+		"compile-tests": "tsc -p . --outDir out",
+		"watch-tests": "tsc -p . -w --outDir out",
+		"pretest": "npm run compile-tests && npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@azure/arm-managementgroups": "^2.0.0",
+		"@azure/arm-resources": "^5.0.0",
+		"@azure/arm-subscriptions": "^3.1.2",
+		"@azure/identity": "^2.0.1",
+		"@azure/ms-rest-azure-env": "^2.0.0",
+		"@azure/ms-rest-nodeauth": "^3.1.1",
+		"@types/gdal": "^0.9.3",
+		"@types/glob": "^7.2.0",
+		"@types/mocha": "^9.1.0",
+		"@types/node": "14.x",
+		"@types/vscode": "^1.65.0",
+		"@typescript-eslint/eslint-plugin": "^5.12.1",
+		"@typescript-eslint/parser": "^5.12.1",
+		"@vscode/test-electron": "^2.1.3",
+		"eslint": "^8.9.0",
+		"glob": "^7.2.0",
+		"mocha": "^9.2.1",
+		"ts-loader": "^9.2.6",
+		"typescript": "^4.5.5",
+		"webpack": "^5.69.1",
+		"webpack-cli": "^4.9.2"
+	},
+	"extensionDependencies": [
+		"ms-vscode.azure-account"
+	]
+}
