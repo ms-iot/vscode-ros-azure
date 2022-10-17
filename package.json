@@ -50,7 +50,7 @@
 	"devDependencies": {
 		"@azure/arm-managementgroups": "^2.0.0",
 		"@azure/arm-resources": "^5.0.0",
-		"@azure/arm-subscriptions": "^3.1.2",
+		"@azure/arm-subscriptions": "^4.0.0",
 		"@azure/identity": "^2.0.1",
 		"@azure/ms-rest-azure-env": "^2.0.0",
 		"@azure/ms-rest-nodeauth": "^3.1.1",
@@ -68,7 +68,7 @@
 		"ts-loader": "^9.2.6",
 		"typescript": "^4.5.5",
 		"webpack": "^5.69.1",
-		"webpack-cli": "^4.9.2"
+		"webpack-cli": "^4.9.2"	
 	},
 	"extensionDependencies": [
 		"ms-vscode.azure-account"

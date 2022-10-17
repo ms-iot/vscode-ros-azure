@@ -83,12 +83,10 @@ export default class AzureMapEditor
                     //points[0].geometry.coordinates[0] lattitude
                     // points[0].geometry.coordinates[1] longitude
                     // points[0].properties.elevation: height in meters
-                    console.log(message.points);
-
                     let csv = path.join(path.dirname(resource.path), "file.csv");
                     let csvHandle : FileHandle;
                     try {
-                        csvHandle = await open(csv, 'w');
+                        csvHandle = await open(csv, 'w+');
                         csvHandle.appendFile('Longitude,Latitude,Elevation\r\n');
                       message.points.forEach(function(c : any) {
                         csvHandle.appendFile(
